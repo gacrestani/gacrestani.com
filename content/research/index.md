@@ -7,7 +7,7 @@ showTableOfContents: false
 
 {{< figure src="yeast.png" alt="yeast" default="true" width="250">}}
 
-My Ph.D. research focuses on understanding evolutionary patterns using *Saccharomyces cerevisiae* as a role organism. I am starting my graduate degree, so I am currently reading papers and not conducting much research or data analysis. However, my lab has some interesting projects and funding to study the dynamics and potential repeatability of yeast's adaptive response to climate change.
+My PhD research focuses on understanding evolutionary patterns using *Drosophila melanogaster* as a role organism. I work with a study system that was created in the 80s, composed of a set of populations that are on a selection treatment for postponed reproduction - we only allow old flies to reproduce. That generates some interesting phenotypes, such as flies with more than double the regular lifespan. Right now, I am looking at the genomics of that adaptation. Hopefully, in understanding the evolutionary dynamics that happened in this system, we can understand a bit more about some fundamental mechanisms of evolution, such as its reproducibility, reversibility, and parallelity.
 
 <br>
 <br>
