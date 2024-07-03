@@ -1,6 +1,6 @@
 +++
 title = 'Teaching'
-date = 2024-07-02T16:37:03-07:00
+date = 2022-12-19T16:37:03-07:00
 draft = false
 +++
 
