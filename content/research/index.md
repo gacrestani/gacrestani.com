@@ -5,7 +5,7 @@ lastmod = 2024-07-03T10:40:00-07:00
 draft = false
 +++
 
-{{< figure src="flies.png" alt="Drosophila melanogaster" default="true" width="250">}}
+{{< figure src="flies.jpeg" alt="Drosophila melanogaster" default="true" width="250">}}
 
 My PhD research focuses on understanding evolutionary dynamics of adaptation of complex traits using *Drosophila melanogaster* as a model organism. I work with a study system that was created in the 80s, composed of a set of populations that are on a selection treatment for postponed reproduction - we only allow old flies to reproduce. That generates some interesting phenotypes, such as flies with more than double the regular lifespan. Right now, I am focused at the genomics of that adaptation. Hopefully, in understanding the evolutionary dynamics that happened in this system, we can understand a bit more about some fundamental mechanisms of evolution, such as its reproducibility, reversibility, and parallelity.
 
