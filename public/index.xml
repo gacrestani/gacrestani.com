@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Giovanni A. Crestani</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Giovanni A. Crestani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Giovanni A. Crestani</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 16:37:03 -0700</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Teaching</title>
+      <link>//localhost:1313/teaching/</link>
+      <pubDate>Tue, 02 Jul 2024 16:37:03 -0700</pubDate>
+      
+      <guid>//localhost:1313/teaching/</guid>
+      <description>During my graduate degree, I am a Graduate Teaching Assistant for an Introductory Biology class at OSU.</description>
+      
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>//localhost:1313/research/</link>
+      <pubDate>Tue, 02 Jul 2024 16:36:58 -0700</pubDate>
+      
+      <guid>//localhost:1313/research/</guid>
+      <description>My PhD research focuses on understanding evolutionary patterns using Drosophila melanogaster as a role organism.</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Tue, 02 Jul 2024 16:36:40 -0700</pubDate>
+      
+      <guid>//localhost:1313/about/</guid>
+      <description>My name is Giovanni Alberto Crestani.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
