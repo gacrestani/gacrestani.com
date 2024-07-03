@@ -1,7 +1,7 @@
 +++
 title = 'Research'
 date = 2024-07-02T16:36:58-07:00
-draft = true
+draft = false
 +++
 
 {{< figure src="yeast.png" alt="yeast" default="true" width="250">}}

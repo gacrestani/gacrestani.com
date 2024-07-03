@@ -32,7 +32,7 @@
 
 [[main]]
   name = "CV"
-  pageRef = "/gacrestani_cv.pdf"
+  pageRef = "/files/gacrestani_cv.pdf"
   weight = 60
 
 #[[main]]

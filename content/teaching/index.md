@@ -1,7 +1,7 @@
 +++
 title = 'Teaching'
 date = 2024-07-02T16:37:03-07:00
-draft = true
+draft = false
 +++
 
 During my graduate degree, I am a Graduate Teaching Assistant for an Introductory Biology class at OSU. I teach students the basics of Biology and science, such as basic instruments (microscope, pipettes, thermocycler, etc) and the Scientific Method (questions, hypothesis, predictions, etc). I am constantly thinking about my teaching phylosophy and didactics. I believe this is working, as students usually express gratitude and enjoynment in my classes.

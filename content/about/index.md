@@ -1,7 +1,7 @@
 +++
 title = 'About'
 date = 2024-07-02T16:36:40-07:00
-draft = true
+draft = false
 +++
 
 {{< figure src="gacrestani-mountain.jpg" alt="me on a hike" default="true" width="450">}}
