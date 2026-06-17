@@ -1,0 +1,83 @@
+{{/* Custom block: github-projects
+     Section title in the LEFT column (section-split style), GitHub repo CARDS in the
+     RIGHT column. Repo metadata (description, language, stars, forks) is fetched from
+     the GitHub API at BUILD time and cached; falls back to a plain card if offline.
+     Front matter:
+       - block: github-projects
+         id: projects
+         content:
+           title: '💻 Projects'
+           repos:
+             - gacrestani/iPSC-Pipeline
+             - gacrestani/chave_dicotomica */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ $title := index $content "title" }}
+{{ $repos := index $content "repos" | default slice }}
+
+<div class="github-projects py-8 px-4 sm:py-12 md:py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-start">
+      {{/* Left: title */}}
+      <div class="md:col-span-4">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white leading-tight tracking-tight">
+          {{ $title | markdownify | emojify }}
+        </h2>
+      </div>
+      {{/* Right: repo cards */}}
+      <div class="md:col-span-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {{ range $repos }}
+            {{ if reflect.IsMap . }}
+              {{/* Custom (non-GitHub) project card: {title, url, description, icon, language} */}}
+              {{ $name := index . "title" | default (index . "name") | default "Project" }}
+              {{ $url := index . "url" | default "#" }}
+              {{ $desc := index . "description" | default "" }}
+              {{ $iconName := index . "icon" | default "globe-alt" }}
+              {{ $lang := index . "language" | default "" }}
+              <a href="{{ $url }}" target="_blank" rel="noopener"
+                 class="gh-card group flex flex-col rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300">
+                <div class="flex items-center gap-2 mb-2">
+                  {{ partial "functions/get_icon" (dict "name" $iconName "attributes" "class='w-5 h-5 text-gray-500 dark:text-gray-400'") }}
+                  <span class="font-bold text-primary-600 dark:text-primary-400 group-hover:underline break-all">{{ $name }}</span>
+                </div>
+                {{ with $desc }}<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 grow">{{ . }}</p>{{ end }}
+                {{ with $lang }}<div class="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 mt-auto"><span>● {{ . }}</span></div>{{ end }}
+              </a>
+            {{ else }}
+              {{/* GitHub repo card: metadata auto-fetched at build */}}
+              {{ $repo := printf "%v" . }}
+              {{ $api := printf "https://api.github.com/repos/%s" $repo }}
+              {{ $data := dict }}
+              {{ $tried := try (resources.GetRemote $api) }}
+              {{ if and (not $tried.Err) $tried.Value }}
+                {{ $data = $tried.Value.Content | transform.Unmarshal }}
+              {{ end }}
+              {{ $fallbackName := index (last 1 (split $repo "/")) 0 }}
+              {{ $name := $data.name | default $fallbackName }}
+              {{ $desc := $data.description | default "" }}
+              {{ $lang := $data.language | default "" }}
+              {{ $stars := $data.stargazers_count | default 0 }}
+              {{ $forks := $data.forks_count | default 0 }}
+              {{ $url := $data.html_url | default (printf "https://github.com/%s" $repo) }}
+              <a href="{{ $url }}" target="_blank" rel="noopener"
+                 class="gh-card group flex flex-col rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300">
+                <div class="flex items-center gap-2 mb-2">
+                  {{ partial "functions/get_icon" (dict "name" "brands/github" "attributes" "class='w-5 h-5 text-gray-500 dark:text-gray-400'") }}
+                  <span class="font-bold text-primary-600 dark:text-primary-400 group-hover:underline break-all">{{ $name }}</span>
+                </div>
+                {{ with $desc }}<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 grow">{{ . }}</p>{{ end }}
+                <div class="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 mt-auto">
+                  {{ with $lang }}<span>● {{ . }}</span>{{ end }}
+                  <span>★ {{ $stars }}</span>
+                  <span>⑂ {{ $forks }}</span>
+                </div>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

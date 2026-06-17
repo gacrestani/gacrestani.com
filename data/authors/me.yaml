@@ -1,0 +1,74 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Giovanni A. Crestani
+  given: Giovanni
+  family: Crestani
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+status:
+  icon: ""
+role: PhD Candidate in Evolutionary Biology
+bio: |
+  I'm a PhD student in the Burke Lab at Oregon State University, working on
+  evolutionary genetics. My main project uses population genomics to study how
+  *Drosophila melanogaster* populations adapt under decades of selection for
+  postponed reproduction. I'm also drawn to information theory in biological
+  systems and the evolutionary dynamics of complex systems more broadly.
+
+affiliations:
+  - name: Burke Lab
+    url: https://www.burkelabosu.org/
+  - name: Integrative Biology
+    url: https://ib.oregonstate.edu/
+  - name: Oregon State University
+    url: https://oregonstate.edu/
+
+links:
+  - icon: at-symbol
+    url: mailto:hello@gacrestani.com
+    label: E-mail Me
+  - icon: brands/github
+    url: https://github.com/gacrestani
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/gacrestani/
+  - icon: academicons/orcid
+    url: https://orcid.org/0009-0007-4470-4041
+    label: ORCID
+
+# NOTE (review): degrees/dates below are best-guesses — please verify program name & dates.
+education:
+  - degree: PhD, Integrative Biology (in progress)
+    institution: Oregon State University
+    start: 2022-09-01
+    summary: |
+      Genomics of experimental evolution in *Drosophila melanogaster* — probing the
+      reproducibility, reversibility, and parallelism of adaptation.
+  - degree: BSc, Biological Sciences (Licentiate)
+    institution: Federal University of Santa Catarina
+    end: 2022-12-31
+
+experience:
+  - role: Graduate Teaching Assistant
+    org: Oregon State University
+    start: 2023-09-01
+    summary: |
+      Lead lab instructor for Introductory Biology — teaching core lab instruments
+      (microscope, pipettes, thermocycler) and the scientific method.
+  - role: Undergraduate Researcher
+    org: Federal University of Santa Catarina
+    start: 2018-01-01
+    end: 2022-12-31
+    summary: |
+      Worked across the bench, field, and computer — including a Snakemake/Docker
+      bioinformatics workflow for single-cell iPSC RNA-Seq analysis.
+
+languages:
+  - name: Portuguese
+    level: 5
+    label: Native
+  - name: English
+    level: 5
+    label: Fluent
