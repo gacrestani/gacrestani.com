@@ -53,19 +53,22 @@ sections:
 
         Gamboa-Santarosa KA\*, **Crestani GA**\*, Moran A, Modha D, Dugo HS, Abdoli M, Burke MK, Shahrestani P. (2026). *bioRxiv.* doi:&nbsp;[10.64898/2026.02.25.708047](https://doi.org/10.64898/2026.02.25.708047)
 
-        <span class="text-sm text-gray-500 dark:text-gray-400">\*Co-first authors (contributed equally).</span>
+        <span class="text-sm text-gray-500 dark:text-gray-400">Manuscript in review, invited for resubmission. \*Equal contribution.</span>
   - block: github-projects
     id: projects
     content:
       title: 'Projects'
       repos:
-        - gacrestani/burke_lab_pipeline
+        - repo: gacrestani/burke_lab_pipeline
+          title: Burke Lab Pipeline
         - title: OmniAccess
           url: https://omniaccess.app/
-          description: "AI-powered tool that generates accessibility descriptions for PowerPoint presentations and PDFs, processed entirely in the browser."
+          description: "AI-powered tool that improves accessibility in lecture presentations."
           icon: globe-alt
-        - gacrestani/iPSC-Pipeline
-        - gacrestani/chave_dicotomica
+        - repo: gacrestani/iPSC-Pipeline
+          title: iPSC Pipeline
+        - repo: gacrestani/chave_dicotomica
+          title: Dichotomous Key App
     design:
       background:
         color:
@@ -80,6 +83,10 @@ sections:
         University, where I help students get hands-on with core lab instruments and the
         scientific method. Students consistently describe a welcoming, patient, and
         well-organized lab environment.
+
+        **Lectures Taught:** BI 221
+
+        **Labs Taught:** BI 101, BI 103, BI 221, BI 222, BI 223
 
         **Average Student Evaluation:** 5.5/6.0
 ---

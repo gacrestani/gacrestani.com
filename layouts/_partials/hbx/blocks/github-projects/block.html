@@ -29,7 +29,7 @@
       <div class="md:col-span-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {{ range $repos }}
-            {{ if reflect.IsMap . }}
+            {{ if and (reflect.IsMap .) (not (index . "repo")) }}
               {{/* Custom (non-GitHub) project card: {title, url, description, icon, language} */}}
               {{ $name := index . "title" | default (index . "name") | default "Project" }}
               {{ $url := index . "url" | default "#" }}
@@ -46,8 +46,12 @@
                 {{ with $lang }}<div class="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 mt-auto"><span>● {{ . }}</span></div>{{ end }}
               </a>
             {{ else }}
-              {{/* GitHub repo card: metadata auto-fetched at build */}}
-              {{ $repo := printf "%v" . }}
+              {{/* GitHub repo card: metadata auto-fetched at build.
+                   Accepts either a bare string ("owner/repo") or a map
+                   {repo: owner/repo, title: ..., description: ...} for overrides. */}}
+              {{ $override := dict }}
+              {{ if reflect.IsMap . }}{{ $override = . }}{{ end }}
+              {{ $repo := cond (reflect.IsMap .) (printf "%v" (index . "repo")) (printf "%v" .) }}
               {{ $api := printf "https://api.github.com/repos/%s" $repo }}
               {{ $data := dict }}
               {{ $tried := try (resources.GetRemote $api) }}
@@ -55,8 +59,8 @@
                 {{ $data = $tried.Value.Content | transform.Unmarshal }}
               {{ end }}
               {{ $fallbackName := index (last 1 (split $repo "/")) 0 }}
-              {{ $name := $data.name | default $fallbackName }}
-              {{ $desc := $data.description | default "" }}
+              {{ $name := index $override "title" | default $data.name | default $fallbackName }}
+              {{ $desc := index $override "description" | default $data.description | default "" }}
               {{ $lang := $data.language | default "" }}
               {{ $stars := $data.stargazers_count | default 0 }}
               {{ $forks := $data.forks_count | default 0 }}
